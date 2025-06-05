@@ -1,0 +1,30 @@
+services:
+  backend-service:
+    volumes:
+      - ./backend-service/.env:/app/.env
+    container_name: backend-service
+    build:
+      context: ./backend-service
+      dockerfile: Dockerfile
+    ports:
+      - "7080:7080"
+    networks:
+      - backend-network
+
+  frontend-service:
+    container_name: mooc-blockchain
+    build:
+      context: ./mooc-blockchain
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - backend-network
+    depends_on:
+      - backend-service
+    volumes:
+      - ./mooc-blockchain/.env:/app/.env
+
+networks:
+  backend-network:
+    name: backend-network

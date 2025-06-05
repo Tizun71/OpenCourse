@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Thông báo từ hệ thống</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 40px 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .footer {
+            font-size: 13px;
+            color: #888;
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header" th:text="${'Xin chào, ' + name + '!'}">Xin chào, Người dùng!</div>
+
+    <div class="content" th:text="${description}">
+        Đây là phần mô tả bạn cần truyền vào, ví dụ: chứng chỉ của bạn đã được cấp thành công!
+    </div>
+
+    <div class="footer">
+        Đây là email tự động. Vui lòng không trả lời email này.<br/>
+        Cảm ơn bạn đã sử dụng hệ thống của chúng tôi.
+    </div>
+</div>
+</body>
+</html>

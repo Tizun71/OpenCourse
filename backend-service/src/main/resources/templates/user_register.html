@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Thông báo tài khoản</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 30px 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .content {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .credentials {
+            background-color: #f0f8ff;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-family: monospace;
+        }
+
+        .footer {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 30px;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header" th:text="${'Xin chào, ' + name}">Xin chào, Người dùng</div>
+
+    <div class="content">
+        <p>Chúng tôi gửi đến bạn thông tin truy cập hệ thống:</p>
+
+        <div class="credentials">
+            <p th:text="${'- Tên truy cập: ' + username}">- Tên truy cập: your_username</p>
+            <p th:text="${'- Mật khẩu truy cập tạm thời: ' + password}">- Mật khẩu truy cập tạm thời: ********</p>
+        </div>
+
+        <p class="highlight">Bạn vui lòng đổi lại mật khẩu sau khi đăng nhập để đảm bảo an toàn thông tin.</p>
+    </div>
+
+    <div class="footer">
+        Đây là email tự động, vui lòng không trả lời.<br/>
+        Cảm ơn bạn đã sử dụng hệ thống của chúng tôi.
+    </div>
+</div>
+</body>
+</html>

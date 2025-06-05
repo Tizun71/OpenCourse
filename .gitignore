@@ -1,0 +1,49 @@
+# ======================
+# Spring Boot (Java + Maven/Gradle)
+# ======================
+backend-service/target/
+backend-service/.classpath
+backend-service/.project
+backend-service/.settings/
+backend-service/.idea/
+backend-service/*.iml
+backend-service/build/
+backend-service/out/
+backend-service/.gradle/
+backend-service/gradle-app.setting
+
+# Logs
+backend-service/*.log
+backend-service/logs/
+
+# ======================
+# Next.js (React + Node.js)
+# ======================
+mooc-blockchain/.next/
+mooc-blockchain/node_modules/
+mooc-blockchain/.env*
+mooc-blockchain/npm-debug.log*
+mooc-blockchain/yarn-debug.log*
+mooc-blockchain/yarn-error.log*
+mooc-blockchain/.turbo/
+mooc-blockchain/out/
+mooc-blockchain/.vercel/
+mooc-blockchain/.eslintcache
+
+# ======================
+# nft-certificate (Ethereum Development)
+# ======================
+nft-certificate/node_modules/
+nft-certificate/artifacts/
+nft-certificate/cache/
+nft-certificate/.env*
+nft-certificate/typechain/
+nft-certificate/coverage/
+nft-certificate/.coverage*
+
+# Common OS-specific or editor-specific files
+**/.DS_Store
+**/Thumbs.db
+**/.vscode/
+**/.idea/
+**/*.swp

@@ -1,0 +1,23 @@
+server:
+  port: 7080
+
+spring:
+  application:
+    name: backend-service
+  profiles:
+    active: @spring.profiles.active@
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+logging:
+  level:
+    root: INFO
+    web: INFO

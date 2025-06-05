@@ -1,0 +1,72 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+  devtools:
+    add-properties: true
+  datasource:
+#    url: jdbc:postgresql://localhost:5432/mooc-blockchain
+    url: jdbc:postgresql://host.docker.internal:5432/mooc-blockchain
+    username: postgres
+    password: 123
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: gnud0701@gmail.com
+    password: ${HOST_MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+springdoc:
+  api-docs:
+    enable: true
+  swagger-ui:
+    enable: true
+openapi:
+#  service:
+#    api-docs: backend-service
+#    server: http://localhost:${server.port}
+#    title: Backend service
+#    version: 1.0.0
+  service:
+    api-docs: backend-service
+    server: http://localhost:${server.port}
+    title: Backend service
+    version: 1.0.0
+
+pinata:
+  api:
+    key: ${PINATA_KEY}
+    secret: ${PINATA_SECRET}
+  base:
+    url: "https://api.pinata.cloud"
+
+jwt:
+  expiryMinutes: 60
+  expiryDays: 30
+  accessKey: ${JWT_ACCESS_KEY}
+  refreshKey: ${JWT_REFRESH_KEY}
+  secretKey: ${JWT_SECRET_KEY}
+
+aws:
+  accessKey: ${AWS_S3_ACCESS_KEY}
+  secretKey: ${AWS_S3_SECRET_KEY}
+  region: ap-southeast-1
+  bucketName: kltn-mooc-blockchain
+
+eth:
+  walletPrivateKey: ${BLOCKCHAIN_PRIVATE_KEY}
+  sepoliaNode: ${SEPOLIA_INFURA_URL}

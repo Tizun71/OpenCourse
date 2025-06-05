@@ -3,7 +3,7 @@ import "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDJVjJxiHR0Ye27wg6jiRTcbp5PZeDWoNc",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE,
   authDomain: "mooc-blockchain-cab9c.firebaseapp.com",
   projectId: "mooc-blockchain-cab9c",
   storageBucket: "mooc-blockchain-cab9c.firebasestorage.app",
